@@ -8,11 +8,13 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "geekServo.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": false,
-    "additionalFilePaths": []
+    "preferredEditor": "tsprj",
+    "installedVersion": "workspace:6d56766d-6edf-4a0d-32fa-fb835a1425da"
 }
