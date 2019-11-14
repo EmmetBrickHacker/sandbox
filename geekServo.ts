@@ -1,4 +1,3 @@
-// Add your code here
 enum ports {
     //% block="S0"
     s0,
@@ -19,7 +18,7 @@ enum ports {
 
 }
 
-//% color="#AA278D" icon="\10f085"
+//% color="#00CC00" icon="\uf1a0"
 namespace geekservo {
 
     //% block="continuous Geekservo 9g 360° $port run at $speed \\%"
