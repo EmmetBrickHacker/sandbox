@@ -1,6 +1,9 @@
 //% block="Otto BrickHacker"
 //% color="#00CC00" icon="\uf1a0"
 namespace Otto {
+    // I2C adresses links to wuKong board
+    const board_address = 0x10
+    
     enum servoList {
         //% block="S0" enumval=0
         S0,
