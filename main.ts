@@ -4,7 +4,7 @@ namespace Otto {
     // I2C adresses links to wuKong board
     const board_address = 0x10
     
-    enum servoList {
+    export enum servoList {
         //% block="S0" enumval=0
         S0,
         //% block="S1" enumval=1
