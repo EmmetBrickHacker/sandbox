@@ -56,4 +56,5 @@ namespace Otto {
             pins.i2cWriteBuffer(board_address, buf);
         }
     }
+    
 }
