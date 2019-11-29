@@ -1,7 +1,7 @@
 //% block="Otto BrickHacker"
 //% color="#00CC00" icon="\uf1a0"
 namespace Otto {
-    enum ports {
+    enum servoList {
         //% block="S0" enumval=0
         S0,
         //% block="S1" enumval=1
@@ -19,12 +19,12 @@ namespace Otto {
         //% block="S7" enumval=7
         S7    
     }
-    
+
     //% block="continuous Geekservo 9g 360° $port run at $speed \\%"
     //% speed.shadow="speedPicker"
     //% speed.defl=100
     //% subcategory=Geekservo
-    export function continuousGeekservo(port: ports, speed: number) : void {
+    export function continuousGeekservo(port: servoList, speed: number) : void {
             let buf = pins.createBuffer(4);
             if (port == 0) {
                 buf[0] = 0x03;
