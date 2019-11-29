@@ -23,37 +23,37 @@ namespace Otto {
         S7    
     }
 
-    //% block="continuous Geekservo 9g 360° $port run at $speed \\%"
-    //% speed.shadow="speedPicker"
-    //% speed.defl=100
+    //% block="continuous Geekservo 9g 360° $servo run at $power \\%"
+    //% power.shadow="speedPicker"
+    //% power.defl=100
     //% subcategory=Geekservo
-    export function continuousGeekservo(port: servoList, speed: number) : void {
+    export function continuousGeekservo (servo: servoList, power: number) {
         let buf = pins.createBuffer(4);
-        if (port == 0) {
+        if (servo == 0) {
             buf[0] = 0x03;
         }
-        if (port == 1) {
+        if (servo == 1) {
             buf[0] = 0x04;
         }
-        if (port == 2) {
+        if (servo == 2) {
             buf[0] = 0x05;
         }
-        if (port == 3) {
+        if (servo == 3) {
             buf[0] = 0x06;
         }
-        if (port == 4) {
+        if (servo == 4) {
             buf[0] = 0x07;
         }
-        if (port == 5) {
+        if (servo == 5) {
             buf[0] = 0x08;
         }
-        if (port == 6) {
+        if (servo == 6) {
             buf[0] = 0x09;
         }
-        if (port == 7) {
+        if (servo == 7) {
             buf[0] = 0x10;
         }
-        buf[1] = speed;
+        buf[1] = power;
         buf[2] = 0;
         buf[3] = 0;
         pins.i2cWriteBuffer(board_address, buf);
