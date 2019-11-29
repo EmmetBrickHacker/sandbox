@@ -23,7 +23,8 @@ namespace Otto {
     //% block="continuous Geekservo 9g 360° $port run at $speed \\%"
     //% speed.shadow="speedPicker"
     //% speed.defl=100
-    export function continuousGeekservo(speed: number, port: ports) {
+    //% subcategory=Geekservo
+    export function continuousGeekservo(port: ports, speed: number) {
 
     }
 }
