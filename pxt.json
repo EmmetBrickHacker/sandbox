@@ -4,8 +4,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "wuKong": "github:elecfreaks/pxt-wukong"        
+        "radio": "*"
     },
     "files": [
         "README.md",
