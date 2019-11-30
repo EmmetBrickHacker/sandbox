@@ -29,3 +29,9 @@ namespace geekservo {
     }
 
 }
+
+namespace Otto {
+    export function pokus {
+    }
+
+}
