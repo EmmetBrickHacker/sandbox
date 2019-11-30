@@ -63,7 +63,7 @@ namespace Otto {
         pins.i2cWriteBuffer(board_address, buf);
     }
 
-    /*
+     /*
      * Setting the angle of a Geekservo (usualy has grey color). 
      * @param servo A  port of servo in the servoList , eg: servoList.S0
      * @param angle[0-270] Angle of Geekservo , eg: 135
