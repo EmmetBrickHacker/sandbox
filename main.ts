@@ -23,7 +23,7 @@ namespace Otto {
         S7
     }
 
-    //% block="continuous Geekservo 9g 360° $servo run at $power \\%"
+    //% block="continuous Geekservo 9g 360° $servo run at $power\\%"
     //% power.shadow="speedPicker"
     //% power.defl=100
     //% subcategory=Geekservo
@@ -59,9 +59,13 @@ namespace Otto {
         pins.i2cWriteBuffer(board_address, buf);
     }
 
-    //% block="Geekservo 9g 270° $servo set to $angle \\°"
-    //% angle.shadow="protractorPicker""
-    //% angle.defl=135
+    /*
+     * Setting the angle of a servo motor. 
+     * @param servo A servo in the servoList , eg: servoList.S0
+     * @param angle[0-270] Angle of servo motor , eg: 135
+     */
+    //% block="Geekservo 9g 270° $servo set to $angle\\°"
+    //% angle.shadow="protractorPicker"
     //% subcategory=Geekservo
     export function Geekservo270(servo: servoList, angle: number) {
         let buf = pins.createBuffer(4);
