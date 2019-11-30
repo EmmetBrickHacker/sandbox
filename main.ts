@@ -30,6 +30,7 @@ namespace Otto {
      */
     //% block="continuous Geekservo 9g 360° $servo run at $power\\%"
     //% power.shadow="speedPicker"
+    //% power.defl=100
     //% subcategory=Geekservo
     export function geekServo360(servo: servoList, power: number) {
         let buf = pins.createBuffer(4);
@@ -70,6 +71,7 @@ namespace Otto {
      */
     //% block="Geekservo 9g 270° $servo set to $angle\\°"
     //% angle.min=0 angle.max=270
+    //% angle.defl=135
     //% subcategory=Geekservo
     export function geekServo270(servo: servoList, angle: number) {
         let buf = pins.createBuffer(4);
