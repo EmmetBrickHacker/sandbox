@@ -23,9 +23,13 @@ namespace Otto {
         S7
     }
 
+    /*
+     * Setting the power and direction of a continuous Geekservo (usualy has lime color). 
+     * @param servo A port of servo in the servoList , eg: servoList.S0
+     * @param power[-100-100] power of continuous Geekservo , eg: 100
+     */
     //% block="continuous Geekservo 9g 360° $servo run at $power\\%"
     //% power.shadow="speedPicker"
-    //% power.defl=100
     //% subcategory=Geekservo
     export function geekServo360(servo: servoList, power: number) {
         let buf = pins.createBuffer(4);
@@ -59,13 +63,13 @@ namespace Otto {
         pins.i2cWriteBuffer(board_address, buf);
     }
 
-    /**
-     * Setting the angle of a servo motor. 
-     * @param servo A servo in the servoList , eg: servoList.S0
-     * @param angle [0-270] Angle of servo motor , eg: 135
+     /*
+     * Setting the angle of a Geekservo (usualy has grey color). 
+     * @param servo A  port of servo in the servoList , eg: servoList.S0
+     * @param angle[0-270] Angle of Geekservo , eg: 135
      */
     //% block="Geekservo 9g 270° $servo set to $angle\\°"
-    //% angle.shadow="protractorPicker"
+    //% angle.min=0 angle.max=270
     //% subcategory=Geekservo
     export function geekServo270(servo: servoList, angle: number) {
         let buf = pins.createBuffer(4);
