@@ -1,6 +1,52 @@
 //% block="Otto BrickHacker"
 //% color="#00CC00" icon="\uf1a0"
 namespace Otto {
+    /*
+    declaration of joints of Otto
+    */
+    export class joint {
+        private name: string;
+        public constructor(name: string) { this.name = name; }
+        public port: servoList;
+        public position: number;
+        public startPosition: number;
+
+        portToString() {
+            return convertToText(this.port);
+        }
+    }
+
+    export let leftAnkle = new joint("leftAnkle");
+    export let rightAnkle = new joint("rightAnkle");
+    export let leftHip = new joint("leftHip");
+    export let rightHip = new joint("rightHip");
+
+    /**
+     * Setting ports where servos for joints are plugged. 
+     * @param leftAnklePort Port for left ankle, eg: servoList.S0
+     * @param rightAnklePort Port for right ankle, eg: servoList.S1
+     * @param leftAnkleHip Port for left hip, eg: servoList.S2
+     * @param rightAnkleHip Port for right hip, eg: servoList.S3
+    
+    */
+    //% block="Setting legs: | left ankle $leftAnklePort | right ankle $rightAnklePort | left hip $leftHipPort | right hip $rightHipPort || starting position $leftAnkleStartPosition | starting position $rightAnkleStartPosition | starting position $leftHipStartPosition | starting position $rightHipStartPosition "
+    //% leftAnklePort.defl=servoList.S0
+    //% rightAnklePort.defl=servoList.S1
+    //% leftHipPort.defl=servoList.S2
+    //% rightHipPort.defl=servoList.S3      
+    //% leftAnkleStartPosition.defl=0
+    //% rightAnkleStartPosition.defl=0
+    //% leftHipStartPosition.defl=5
+    //% rightHipStartPosition.defl=-5      
+    //% expandableArgumentMode="toggle"
+    //% subcategory=settings
+    export function settingLegs(
+        leftAnklePort: servoList, rightAnklePort: servoList, leftHipPort: servoList, rightHipPort: servoList,
+        leftAnkleStartPosition?: number, rightAnkleStartPosition?: number, leftHipStartPosition?: number, rightHipStartPosition?: number ) {
+
+    }
+
+
     // I2C adresses links to wuKong board
     const board_address = 0x10
 
