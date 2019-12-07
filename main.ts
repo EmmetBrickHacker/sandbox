@@ -41,8 +41,15 @@ namespace Otto {
     //% expandableArgumentMode="toggle"
     export function settingLegs(
         leftAnklePort?: servoList, rightAnklePort?: servoList, leftHipPort?: servoList, rightHipPort?: servoList,
-        leftAnkleStartPosition?: number, rightAnkleStartPosition?: number, leftHipStartPosition?: number, rightHipStartPosition?: number ) {
-
+        leftAnkleStartPosition?: number, rightAnkleStartPosition?: number, leftHipStartPosition?: number, rightHipStartPosition?: number) {
+        leftAnkle.port = leftAnklePort
+        leftAnkle.startPosition = leftAnkleStartPosition
+        rightAnkle.port = rightAnklePort
+        rightAnkle.startPosition = rightAnkleStartPosition
+        leftHip.port = leftHipPort
+        leftHip.startPosition = leftHipStartPosition
+        rightHip.port = rightHipPort
+        rightHip.startPosition = rightHipStartPosition     
     }
 
 
