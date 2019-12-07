@@ -47,6 +47,15 @@ namespace Otto {
     export let leftHip = new joint("leftHip"); leftHip.port = Otto.servoList.S2, leftHip.startPosition = 130;
     export let rightHip = new joint("rightHip"); rightHip.port = Otto.servoList.S3, rightHip.startPosition = 140;
 
+/*************************************************** Main ******************************************/
+    //% block="Move legs to starting position"
+    export function legsStartPosition() {
+        Otto.geekServo270(Otto.leftAnkle.port, Otto.leftAnkle.startPosition)
+        Otto.geekServo270(Otto.rightAnkle.port, Otto.rightAnkle.startPosition)
+        Otto.geekServo270(Otto.leftHip.port, Otto.leftHip.startPosition)
+        Otto.geekServo270(Otto.rightHip.port, Otto.rightHip.startPosition)
+    }
+    
 /*************************************************** [SUBCATEGORY] settings ******************************************/
     /**
      * Setting ports where servos for joints are plugged. 
@@ -59,7 +68,7 @@ namespace Otto {
      * @param leftHipStartPosition Default angle of left hip , eg: 130
      * @param rightHipStartPosition Default angle of right hip , eg: 140
     */
-    //% block="Legs  Settings||left ankle $leftAnklePort starting position $leftAnkleStartPosition|right ankle $rightAnklePort starting position $rightAnkleStartPosition|left hip $leftHipPort starting position $leftHipStartPosition|right hip $rightHipPort starting position $rightHipStartPosition"
+    //% block="Set legs starting positions:|left ankle $leftAnklePort starting position $leftAnkleStartPosition| right ankle $rightAnklePort starting position $rightAnkleStartPosition|left hip $leftHipPort starting position $leftHipStartPosition|right hip $rightHipPort starting position $rightHipStartPosition"
     //% leftAnklePort.defl=Otto.servoList.S0
     //% rightAnklePort.defl=Otto.servoList.S1
     //% leftHipPort.defl=Otto.servoList.S2
@@ -71,8 +80,8 @@ namespace Otto {
     //% subcategory=settings
     //% expandableArgumentMode="toggle"
     export function settingLegs(
-        leftAnklePort?: servoList, rightAnklePort?: servoList, leftHipPort?: servoList, rightHipPort?: servoList,
-        leftAnkleStartPosition?: number, rightAnkleStartPosition?: number, leftHipStartPosition?: number, rightHipStartPosition?: number) {
+        leftAnklePort: servoList, rightAnklePort: servoList, leftHipPort: servoList, rightHipPort: servoList,
+        leftAnkleStartPosition: number, rightAnkleStartPosition: number, leftHipStartPosition: number, rightHipStartPosition: number) {
         leftAnkle.port = leftAnklePort
         leftAnkle.startPosition = leftAnkleStartPosition
         rightAnkle.port = rightAnklePort
@@ -168,8 +177,3 @@ namespace Otto {
 
 }
 
-/*************************************************** Main ******************************************/
-export function testLegs() {
-    Otto.geekServo270(Otto.leftAnkle.port, Otto.leftAnkle.startPosition)
-    Otto.geekServo270(Otto.rightAnkle.port, Otto.rightAnkle.startPosition)
-}
