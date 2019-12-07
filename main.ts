@@ -23,25 +23,24 @@ namespace Otto {
 
     /**
      * Setting ports where servos for joints are plugged. 
-     * @param leftAnklePort Port for left ankle, eg: servoList.S0
-     * @param rightAnklePort Port for right ankle, eg: servoList.S1
-     * @param leftAnkleHip Port for left hip, eg: servoList.S2
-     * @param rightAnkleHip Port for right hip, eg: servoList.S3
-    
+     * @param leftAnklePort Port for left ankle, eg: Otto.servoList.S0
+     * @param rightAnklePort Port for right ankle, eg: Otto.servoList.S1
+     * @param leftAnkleHip Port for left hip, eg: Otto.servoList.S2
+     * @param rightAnkleHip Port for right hip, eg: Otto.servoList.S3    
     */
-    //% block="Setting legs: | left ankle $leftAnklePort | right ankle $rightAnklePort | left hip $leftHipPort | right hip $rightHipPort || starting position $leftAnkleStartPosition | starting position $rightAnkleStartPosition | starting position $leftHipStartPosition | starting position $rightHipStartPosition "
-    //% leftAnklePort.defl=servoList.S0
-    //% rightAnklePort.defl=servoList.S1
-    //% leftHipPort.defl=servoList.S2
-    //% rightHipPort.defl=servoList.S3      
+    //% block="Legs  Settings||left ankle $leftAnklePort starting position $leftAnkleStartPosition|right ankle $rightAnklePort starting position $rightAnkleStartPosition|left hip $leftHipPort starting position $leftHipStartPosition|right hip $rightHipPort starting position $rightHipStartPosition"
+    //% leftAnklePort.defl=Otto.servoList.S0
+    //% rightAnklePort.defl=Otto.servoList.S1
+    //% leftHipPort.defl=Otto.servoList.S2
+    //% rightHipPort.defl=Otto.servoList.S3      
     //% leftAnkleStartPosition.defl=0
     //% rightAnkleStartPosition.defl=0
     //% leftHipStartPosition.defl=5
     //% rightHipStartPosition.defl=-5      
-    //% expandableArgumentMode="toggle"
     //% subcategory=settings
+    //% expandableArgumentMode="toggle"
     export function settingLegs(
-        leftAnklePort: servoList, rightAnklePort: servoList, leftHipPort: servoList, rightHipPort: servoList,
+        leftAnklePort?: servoList, rightAnklePort?: servoList, leftHipPort?: servoList, rightHipPort?: servoList,
         leftAnkleStartPosition?: number, rightAnkleStartPosition?: number, leftHipStartPosition?: number, rightHipStartPosition?: number ) {
 
     }
