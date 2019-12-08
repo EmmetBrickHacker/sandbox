@@ -1,7 +1,7 @@
 //% block="Otto BrickHacker"
 //% color="#00CC00" icon="\uf1a0"
 namespace Otto {
-/*************************************************** Otto's ports ******************************************/
+// *************************************************** Otto's ports ****************************************** //
     /** 
      * I2C adresses links to wuKong board
     */
@@ -29,7 +29,7 @@ namespace Otto {
         S7
     }
     
-/*************************************************** Otto's joints ******************************************/
+// *************************************************** Otto's joints ****************************************** //
     export class joint {
         private name: string;
         public constructor(name: string) { this.name = name; }
@@ -42,12 +42,12 @@ namespace Otto {
         }
     }
 
-    export let leftAnkle = new joint("leftAnkle"); leftAnkle.port = Otto.servoList.S0, leftAnkle.startPosition = 133;    
-    export let rightAnkle = new joint("rightAnkle"); rightAnkle.port = Otto.servoList.S1, rightAnkle.startPosition = 137;
-    export let leftHip = new joint("leftHip"); leftHip.port = Otto.servoList.S2, leftHip.startPosition = 130;
-    export let rightHip = new joint("rightHip"); rightHip.port = Otto.servoList.S3, rightHip.startPosition = 140;
+    export let leftAnkle = new joint("leftAnkle"); leftAnkle.port = Otto.servoList.S0, leftAnkle.startPosition = 137;    
+    export let rightAnkle = new joint("rightAnkle"); rightAnkle.port = Otto.servoList.S1, rightAnkle.startPosition = 133;
+    export let leftHip = new joint("leftHip"); leftHip.port = Otto.servoList.S2, leftHip.startPosition = 140;
+    export let rightHip = new joint("rightHip"); rightHip.port = Otto.servoList.S3, rightHip.startPosition = 130;
 
-/*************************************************** Main ******************************************/
+// *************************************************** Main ****************************************** //
     //% block="Move legs to starting position"
     export function legsStartPosition() {
         Otto.geekServo270(Otto.leftAnkle.port, Otto.leftAnkle.startPosition)
@@ -56,27 +56,27 @@ namespace Otto {
         Otto.geekServo270(Otto.rightHip.port, Otto.rightHip.startPosition)
     }
     
-/*************************************************** [SUBCATEGORY] settings ******************************************/
+// *************************************************** [SUBCATEGORY] settings ****************************************** //
     /**
      * Setting ports where servos for joints are plugged. 
      * @param leftAnklePort Port for left ankle , eg: Otto.servoList.S0
      * @param rightAnklePort Port for right ankle , eg: Otto.servoList.S1
      * @param leftAnkleHip Port for left hip , eg: Otto.servoList.S2
      * @param rightAnkleHip Port for right hip , eg: Otto.servoList.S3
-     * @param leftAnkleStartPosition Default angle of left ankle , eg: 133
-     * @param rightAnkleStartPosition Default angle of right ankle , eg: 137
-     * @param leftHipStartPosition Default angle of left hip , eg: 130
-     * @param rightHipStartPosition Default angle of right hip , eg: 140
+     * @param leftAnkleStartPosition Default angle of left ankle , eg: 137
+     * @param rightAnkleStartPosition Default angle of right ankle , eg: 133
+     * @param leftHipStartPosition Default angle of left hip , eg: 140
+     * @param rightHipStartPosition Default angle of right hip , eg: 130
     */
     //% block="Set legs starting positions:|left ankle $leftAnklePort starting position $leftAnkleStartPosition| right ankle $rightAnklePort starting position $rightAnkleStartPosition|left hip $leftHipPort starting position $leftHipStartPosition|right hip $rightHipPort starting position $rightHipStartPosition"
     //% leftAnklePort.defl=Otto.servoList.S0
     //% rightAnklePort.defl=Otto.servoList.S1
     //% leftHipPort.defl=Otto.servoList.S2
     //% rightHipPort.defl=Otto.servoList.S3      
-    //% leftAnkleStartPosition.defl=133
-    //% rightAnkleStartPosition.defl=137
-    //% leftHipStartPosition.defl=130
-    //% rightHipStartPosition.defl=140      
+    //% leftAnkleStartPosition.defl=137
+    //% rightAnkleStartPosition.defl=133
+    //% leftHipStartPosition.defl=140
+    //% rightHipStartPosition.defl=130      
     //% subcategory=settings
     //% expandableArgumentMode="toggle"
     export function settingLegs(
@@ -92,7 +92,7 @@ namespace Otto {
         rightHip.startPosition = rightHipStartPosition     
     }
 
-/*************************************************** [SUBCATEGORY] Geekservo ******************************************/
+// *************************************************** [SUBCATEGORY] Geekservo ****************************************** //
     /**
      * Setting the power and direction of a continuous Geekservo (usualy has lime color). 
      * @param servo A port of servo in the servoList , eg: servoList.S0
